@@ -27,7 +27,7 @@ startBtn.onclick = () => {
   interval = setInterval(() => {
     if (i > 0) {
       i--;
-      let minutes = i / 60;
+      let minutes = Math.abs(i / 60 - (i > 29 ? 1 : 0) + (i == 30 ? 0.5 : 0));
       let seconds = i % 60;
 
       timerDisplay.innerText =
