@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Animedoro Timer Settings</title>
+  </head>
+  <body>
+    <center>
+      <p style="font-size: 3rem; letter-spacing: 5px">Settings</p>
+      <br />
+      <p>Change Work Time (Minutes):</p>
+      <input type="number" id="workTimeInput" />
+
+      <br />
+      <br />
+
+      <p>Change Break Time (Minutes):</p>
+      <input type="number" id="breakTimeInput" />
+
+      <br />
+      <br />
+
+      <p>Add Custom Work GIF:</p>
+      <input
+        type="text"
+        placeholder="Enter the link..."
+        id="workTimeGIFinput"
+      />
+
+      <br />
+      <br />
+
+      <p>Add Custom Break GIF:</p>
+      <input
+        type="text"
+        placeholder="Enter the link..."
+        id="breakTimeGIFinput"
+      />
+      <br />
+      <br />
+      <br />
+      <button
+        id="saveBtn"
+        style="
+          background-color: #fff;
+          font-family: 'Poppins', sans-serif;
+          font-size: 20px;
+        "
+      >
+        Save Changes
+      </button>
+
+      <button
+        id="resetSettings"
+        style="
+          background-color: #fff;
+          font-family: 'Poppins', sans-serif;
+          font-size: 20px;
+        "
+      >
+        Reset Settings
+      </button>
+
+      <a href="./index.html">
+        <button
+          style="
+            background-color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+          "
+        >
+          Back
+        </button>
+      </a>
+    </center>
+
+    <script src="./settings.js"></script>
+  </body>
+</html>
