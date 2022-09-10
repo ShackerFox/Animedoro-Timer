@@ -7,6 +7,9 @@ const pauseBtn = document.getElementById("pauseBtn");
 const alarm = new Audio("Alarm.mp3");
 const statusGIF = document.getElementById("statusGIF");
 
+const volumeMute = document.getElementById("volumeMuteBtn");
+const volumeUnmute = document.getElementById("volumeUnmuteBtn");
+
 if (!localStorage.getItem("studyCountdown"))
   localStorage.setItem("studyCountdown", 40);
 if (!localStorage.getItem("breakCountdown"))
@@ -73,4 +76,37 @@ pauseBtn.onclick = () => {
   clearInterval(interval);
   startBtn.style.display = "initial";
   pauseBtn.style.display = "none";
+};
+
+// Loads the IFrame Player API code asynchronously.
+var tag = document.createElement("script");
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("lofiplayer", {
+    events: {
+      onReady: onPlayerReady,
+    },
+  });
+}
+
+function onPlayerReady(event) {
+  player.setVolume(0);
+  player.playVideo();
+}
+
+volumeUnmute.onclick = () => {
+  player.setVolume(100);
+  volumeMute.style.display = "initial";
+  volumeUnmute.style.display = "none";
+};
+
+volumeMute.onclick = () => {
+  player.setVolume(0);
+  volumeMute.style.display = "none";
+  volumeUnmute.style.display = "initial";
 };
