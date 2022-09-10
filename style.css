@@ -11,6 +11,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: #eee;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -28,6 +29,32 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+body input {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 15px 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+body button {
+  margin: 15px 30px 15px 30px;
+  font-size: 30px;
+  padding: 15px 18px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+body .settingsbutton {
+  background-color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 body .statusGIF {
@@ -63,16 +90,6 @@ body .countdown-container .control-buttons {
   display: flex;
 }
 
-body .countdown-container .control-buttons button {
-  margin: 15px 30px 15px 30px;
-  font-size: 30px;
-  padding: 15px 18px;
-  border: none;
-  outline: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
 body .countdown-container .control-buttons .stop-btn {
   display: none;
 }
@@ -80,4 +97,3 @@ body .countdown-container .control-buttons .stop-btn {
 body .countdown-container .control-buttons .pause-btn {
   display: none;
 }
-/*# sourceMappingURL=style.css.map */
