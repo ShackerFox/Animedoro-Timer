@@ -7,8 +7,18 @@ const pauseBtn = document.getElementById("pauseBtn");
 const alarm = new Audio("Alarm.mp3");
 const statusGIF = document.getElementById("statusGIF");
 
-let studyCountdown = 2400;
-let breakCountdown = 1200;
+if (!localStorage.getItem("studyCountdown"))
+  localStorage.setItem("studyCountdown", 40);
+if (!localStorage.getItem("breakCountdown"))
+  localStorage.setItem("breakCountdown", 20);
+
+if (!localStorage.getItem("Study GIF Source"))
+  localStorage.setItem("Study GIF Source", "./images/Deku Studying.gif");
+if (!localStorage.getItem("Break GIF Source"))
+  localStorage.setItem("Break GIF Source", "./images/Anime gif.gif");
+
+let studyCountdown = localStorage.getItem("studyCountdown") * 60;
+let breakCountdown = localStorage.getItem("breakCountdown") * 60;
 
 let i;
 
@@ -17,7 +27,7 @@ let currentStatus = "Study Time";
 let interval;
 
 i = studyCountdown;
-statusGIF.src = "./images/Deku Studying.gif";
+statusGIF.src = localStorage.getItem("Study GIF Source");
 
 startBtn.onclick = () => {
   startBtn.style.display = "none";
@@ -41,11 +51,11 @@ startBtn.onclick = () => {
       if (currentStatus == "Study Time") {
         currentStatus = "Anime Time";
         i = breakCountdown;
-        statusGIF.src = "./images/Anime gif.gif";
+        statusGIF.src = localStorage.getItem("Break GIF Source");
       } else {
         currentStatus = "Study Time";
         i = studyCountdown;
-        statusGIF.src = "./images/Deku Studying.gif";
+        statusGIF.src = localStorage.getItem("Study GIF Source");
       }
       alarm.play();
       startBtn.style.display = "initial";
