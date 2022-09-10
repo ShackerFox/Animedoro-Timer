@@ -8,14 +8,15 @@ const resetBtn = document.getElementById("resetSettings");
 
 workTimeInput.value = parseInt(localStorage.getItem("studyCountdown"));
 breakTimeInput.value = parseInt(localStorage.getItem("breakCountdown"));
-workTimeGIFinput.value = localStorage.getItem("Study GIF Source");
-breakTimeGIFinput.value = localStorage.getItem("Break GIF Source");
 
 saveBtn.onclick = () => {
   localStorage.setItem("studyCountdown", parseInt(workTimeInput.value));
   localStorage.setItem("breakCountdown", parseInt(breakTimeInput.value));
-  localStorage.setItem("Study GIF Source", workTimeGIFinput.value);
-  localStorage.setItem("Break GIF Source", breakTimeGIFinput.value);
+
+  if (!workTimeGIFinput.value == null || !workTimeGIFinput.value == "")
+    localStorage.setItem("Study GIF Source", workTimeGIFinput.value);
+  if (!breakTimeGIFinput.value == null || !breakTimeGIFinput.value == "")
+    localStorage.setItem("Break GIF Source", breakTimeGIFinput.value);
 
   workTimeInput.value = parseInt(localStorage.getItem("studyCountdown"));
   breakTimeInput.value = parseInt(localStorage.getItem("breakCountdown"));
@@ -31,6 +32,4 @@ resetBtn.onclick = () => {
 
   workTimeInput.value = parseInt(localStorage.getItem("studyCountdown"));
   breakTimeInput.value = parseInt(localStorage.getItem("breakCountdown"));
-  workTimeGIFinput.value = localStorage.getItem("Study GIF Source");
-  breakTimeGIFinput.value = localStorage.getItem("Break GIF Source");
 };
