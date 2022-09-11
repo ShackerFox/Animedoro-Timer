@@ -10,6 +10,8 @@ const statusGIF = document.getElementById("statusGIF");
 const volumeMute = document.getElementById("volumeMuteBtn");
 const volumeUnmute = document.getElementById("volumeUnmuteBtn");
 
+const alarmDismissBtn = document.getElementById("alarmDismissBtn");
+
 if (!localStorage.getItem("studyCountdown"))
   localStorage.setItem("studyCountdown", 40);
 if (!localStorage.getItem("breakCountdown"))
@@ -61,6 +63,8 @@ startBtn.onclick = () => {
         statusGIF.src = localStorage.getItem("Study GIF Source");
       }
       alarm.play();
+      alarm.loop = true;
+      alarmDismissBtn.style.display = "initial";
       startBtn.style.display = "initial";
       pauseBtn.style.display = "none";
       stopBtn.style.display = "none";
@@ -109,4 +113,10 @@ volumeMute.onclick = () => {
   player.setVolume(0);
   volumeMute.style.display = "none";
   volumeUnmute.style.display = "initial";
+};
+
+alarmDismissBtn.onclick = () => {
+  alarm.pause();
+  alarm.currentTime = 0;
+  alarmDismissBtn.style.display = "none";
 };
