@@ -48,6 +48,7 @@ body button {
   outline: none;
   border-radius: 15px;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
 body .settingsbutton {
@@ -65,6 +66,15 @@ body .volumebutton {
 }
 
 body .volume-mute {
+  display: none;
+}
+
+body .alarmDismissBtn {
+  background-color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  font-size: 25px;
   display: none;
 }
 
