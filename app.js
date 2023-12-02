@@ -18,7 +18,7 @@ if (!localStorage.getItem("breakCountdown"))
   localStorage.setItem("breakCountdown", 20);
 
 if (!localStorage.getItem("Study GIF Source"))
-  localStorage.setItem("Study GIF Source", "./images/eminem gif.gif");
+  localStorage.setItem("Study GIF Source", "./images/eminem.gif");
 if (!localStorage.getItem("Break GIF Source"))
   localStorage.setItem("Break GIF Source", "./images/eminem awesome.gif");
 
