@@ -18,9 +18,9 @@ if (!localStorage.getItem("breakCountdown"))
   localStorage.setItem("breakCountdown", 20);
 
 if (!localStorage.getItem("Study GIF Source"))
-  localStorage.setItem("Study GIF Source", "./images/Deku Studying.gif");
+  localStorage.setItem("Study GIF Source", "./images/eminem gif.gif");
 if (!localStorage.getItem("Break GIF Source"))
-  localStorage.setItem("Break GIF Source", "./images/Anime gif.gif");
+  localStorage.setItem("Break GIF Source", "./images/eminem awesome.gif");
 
 let studyCountdown = localStorage.getItem("studyCountdown") * 60;
 let breakCountdown = localStorage.getItem("breakCountdown") * 60;
